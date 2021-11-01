@@ -1,0 +1,6 @@
+cracker::1.75::9
+pop tart::2.50::5
+cookie::1.50::8
+candy::1.25::6
+soda::2.00::1
+gum::1.00::10
