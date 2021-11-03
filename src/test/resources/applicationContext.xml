@@ -17,4 +17,15 @@
 
     <!-- Bean definitions go here -->
 
+    <bean id="vendingMachineDao" class="com.mthree.vendingmachine.dao.VendingMachineDaoFileImpl"/>
+
+    <bean id="vendingMachineDaoStub" class="com.mthree.vendingmachine.service.VendingMachineDaoStubImpl"/>
+
+    <bean id="auditDaoStub" class="com.mthree.vendingmachine.service.VendingMachineAuditDaoStubImpl"/>
+
+    <bean id="serviceLayer" class="com.mthree.vendingmachine.service.VendingMachineServiceLayerImpl">
+        <constructor-arg ref="vendingMachineDaoStub"/>
+        <constructor-arg ref="auditDaoStub"/>
+    </bean>
+
 </beans>

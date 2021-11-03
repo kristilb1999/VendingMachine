@@ -7,6 +7,8 @@ import com.mthree.vendingmachine.dto.InventoryItem;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.math.BigDecimal;
 
@@ -17,10 +19,15 @@ class VendingMachineServiceLayerImplTest {
     private VendingMachineServiceLayer service;
 
     public VendingMachineServiceLayerImplTest() {
-        VendingMachineDao dao = new VendingMachineDaoStubImpl();
-        VendingMachineAuditDao auditDao = new VendingMachineAuditDaoStubImpl();
+//        VendingMachineDao dao = new VendingMachineDaoStubImpl();
+//        VendingMachineAuditDao auditDao = new VendingMachineAuditDaoStubImpl();
+//
+//        service = new VendingMachineServiceLayerImpl(dao, auditDao);
 
-        service = new VendingMachineServiceLayerImpl(dao, auditDao);
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        service = ctx.getBean("serviceLayer", VendingMachineServiceLayer.class);
+
     }
 
     @Test
