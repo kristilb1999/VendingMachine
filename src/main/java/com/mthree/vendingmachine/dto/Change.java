@@ -65,6 +65,7 @@ public class Change {
         return this.quarters + " quarters, " + this.dimes + " dimes, " + this.nickels + " nickels, and " + this.pennies + " pennies.";
     }
 
+    //better to just pass in the cost of the item
     public String getChange(BigDecimal coinsPaid, InventoryItem itemToPurchase) {
 
         BigDecimal cost = itemToPurchase.getItemCost();

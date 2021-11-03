@@ -57,6 +57,9 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
 
         String yourChange = dao.sellItem(name, coinsPaid);
 
+        //write to audit log
+        auditDao.writeAuditEntry("Item " + name + " SOLD.");
+
         return yourChange;
     }
 

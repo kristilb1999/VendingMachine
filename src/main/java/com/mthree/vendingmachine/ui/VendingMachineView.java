@@ -15,8 +15,12 @@ public class VendingMachineView {
     public void printMenu(List<InventoryItem> inventory) {
         io.print("\nMain Menu");
         for(InventoryItem item : inventory) {
-            io.print("");
-            io.print(item.toString());
+            if (item.getNumInInventory() > 0) {
+
+                io.print("");
+                io.print(item.toString());
+            }
+
         }
         io.print("\nType 'LEAVE' to leave Vending Machine.\n");
 ;
@@ -35,7 +39,7 @@ public class VendingMachineView {
     }
 
     public void displayBuyCrackersBanner() {
-        io.print("\n========== Buy Cookies ==========\n");
+        io.print("\n========== Buy Crackers ==========\n");
     }
 
     public void displayBuyCandyBanner() {

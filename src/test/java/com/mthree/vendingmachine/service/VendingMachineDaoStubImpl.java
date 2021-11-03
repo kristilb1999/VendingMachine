@@ -16,7 +16,7 @@ public class VendingMachineDaoStubImpl implements VendingMachineDao {
     public VendingMachineDaoStubImpl() {
         onlyItem = new InventoryItem("fudge");
         onlyItem.setItemCost(new BigDecimal("2.25"));
-        onlyItem.setNumInInventory(0);
+        onlyItem.setNumInInventory(15);
     }
 
     public VendingMachineDaoStubImpl(InventoryItem testItem) {
